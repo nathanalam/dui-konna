@@ -31,6 +31,13 @@ const nextConfig = {
   trailingSlash: true,
   basePath: '/dui-konna',
   assetPrefix: '/dui-konna/',
+  distDir: 'out',
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.output.publicPath = '/dui-konna/';
+    }
+    return config;
+  },
 }
 
 if (userConfig) {
