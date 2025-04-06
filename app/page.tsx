@@ -1,11 +1,13 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Facebook, Instagram, ShoppingBag, Star, Truck } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Facebook, Instagram, ShoppingBag, Star, Truck } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ReviewCard } from "@/components/review-card";
+import { VIDEO_REVIEWS, WRITTEN_REVIEWS } from "@/lib/const";
 
 export default function Home() {
   return (
@@ -13,20 +15,38 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="Logo.png" alt="Dui Konna Logo" width={40} height={40} className="rounded-full" />
+            <Image
+              src="Logo.png"
+              alt="Dui Konna Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
             <span className="text-xl font-bold">Dui Konna</span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#about"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               About
             </Link>
-            <Link href="#products" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#products"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               Products
             </Link>
-            <Link href="#reviews" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#reviews"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               Reviews
             </Link>
-            <Link href="#track" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#track"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               Track Order
             </Link>
           </nav>
@@ -52,7 +72,8 @@ export default function Home() {
                   Discover Unique Muslin Sarees
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
-                  Experience the timeless elegance of handcrafted Muslin sarees, where tradition meets contemporary design.
+                  Experience the timeless elegance of handcrafted Muslin sarees,
+                  where tradition meets contemporary design.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
@@ -73,10 +94,12 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">About Dui Konna</h2>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                  About Dui Konna
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We are passionate about preserving the rich heritage of Muslin sarees while bringing modern designs to
-                  our customers.
+                  We are passionate about preserving the rich heritage of Muslin
+                  sarees while bringing modern designs to our customers.
                 </p>
               </div>
             </div>
@@ -92,25 +115,37 @@ export default function Home() {
               </div>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl">Our Story</h3>
+                  <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                    Our Story
+                  </h3>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Dui Konna was founded with a vision to showcase the exquisite craftsmanship of traditional Muslin
-                    sarees. Our collection features handpicked pieces that blend traditional techniques with
-                    contemporary designs.
+                    Dui Konna was founded with a vision to showcase the
+                    exquisite craftsmanship of traditional Muslin sarees. Our
+                    collection features handpicked pieces that blend traditional
+                    techniques with contemporary designs.
                   </p>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    We work directly with skilled artisans to ensure the highest quality and to support the continuation
-                    of this beautiful art form.
+                    We work directly with skilled artisans to ensure the highest
+                    quality and to support the continuation of this beautiful
+                    art form.
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <Link href="https:/facebook.com" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="https:/facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button variant="outline" size="icon">
                       <Facebook className="h-4 w-4" />
                       <span className="sr-only">Facebook</span>
                     </Button>
                   </Link>
-                  <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button variant="outline" size="icon">
                       <Instagram className="h-4 w-4" />
                       <span className="sr-only">Instagram</span>
@@ -122,11 +157,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="products" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <section
+          id="products"
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted/40"
+        >
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Collection</h2>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                  Our Collection
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Explore our unique collection of handcrafted Muslin sarees.
                 </p>
@@ -134,16 +174,52 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {[
-                { img: "facebook-assets/Saree1.jpg", name: "Classic Muslin Saree", price: 2500 },
-                { img: "facebook-assets/Saree2.jpg", name: "Royal Muslin Saree", price: 3000 },
-                { img: "facebook-assets/Model1.jpg", name: "Designer Muslin Saree", price: 3500 },
-                { img: "facebook-assets/Model2.jpg", name: "Traditional Muslin Saree", price: 2800 },
-                { img: "facebook-assets/Model3.jpg", name: "Modern Muslin Saree", price: 3200 },
-                { img: "facebook-assets/Model4.jpg", name: "Boutique Muslin Saree", price: 4000 },
-                { img: "facebook-assets/Model5.jpg", name: "Luxury Muslin Saree", price: 4500 },
-                { img: "facebook-assets/Model6.jpg", name: "Premium Muslin Saree", price: 3800 },
+                {
+                  img: "facebook-assets/Saree1.jpg",
+                  name: "Classic Muslin Saree",
+                  price: 2500,
+                },
+                {
+                  img: "facebook-assets/Saree2.jpg",
+                  name: "Royal Muslin Saree",
+                  price: 3000,
+                },
+                {
+                  img: "facebook-assets/Model1.jpg",
+                  name: "Designer Muslin Saree",
+                  price: 3500,
+                },
+                {
+                  img: "facebook-assets/Model2.jpg",
+                  name: "Traditional Muslin Saree",
+                  price: 2800,
+                },
+                {
+                  img: "facebook-assets/Model3.jpg",
+                  name: "Modern Muslin Saree",
+                  price: 3200,
+                },
+                {
+                  img: "facebook-assets/Model4.jpg",
+                  name: "Boutique Muslin Saree",
+                  price: 4000,
+                },
+                {
+                  img: "facebook-assets/Model5.jpg",
+                  name: "Luxury Muslin Saree",
+                  price: 4500,
+                },
+                {
+                  img: "facebook-assets/Model6.jpg",
+                  name: "Premium Muslin Saree",
+                  price: 3800,
+                },
               ].map((item, i) => (
-                <Link href="#" key={i} className="group relative overflow-hidden rounded-lg">
+                <Link
+                  href="#"
+                  key={i}
+                  className="group relative overflow-hidden rounded-lg"
+                >
                   <div className="aspect-[3/4] w-full overflow-hidden rounded-lg">
                     <Image
                       src={item.img}
@@ -155,7 +231,9 @@ export default function Home() {
                   </div>
                   <div className="p-4">
                     <h3 className="font-semibold">{item.name}</h3>
-                    <p className="text-sm text-muted-foreground">Handcrafted with Love</p>
+                    <p className="text-sm text-muted-foreground">
+                      Handcrafted with Love
+                    </p>
                     <div className="mt-2 flex items-center justify-between">
                       <span className="font-medium">৳ {item.price}</span>
                       <Button variant="outline" size="sm">
@@ -178,7 +256,9 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Customer Reviews</h2>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                  Customer Reviews
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   See what our customers are saying about our sarees.
                 </p>
@@ -192,78 +272,15 @@ export default function Home() {
               </TabsList>
               <TabsContent value="photos" className="mt-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {[
-                    { img: "facebook-assets/Model7.jpg", name: "Sarah K.", rating: 5, review: "The craftsmanship is exceptional! The saree drapes beautifully and the colors are exactly as shown." },
-                    { img: "facebook-assets/Model8.jpg", name: "Priya M.", rating: 5, review: "Absolutely love my Muslin saree! The quality is outstanding and it's so comfortable to wear." },
-                    { img: "facebook-assets/Model1.jpg", name: "Anjali R.", rating: 4, review: "Beautiful design and perfect fit. The attention to detail is remarkable." },
-                    { img: "facebook-assets/Model2.jpg", name: "Meera S.", rating: 5, review: "The traditional patterns with modern touch make this saree unique. Highly recommended!" },
-                    { img: "facebook-assets/Model3.jpg", name: "Riya P.", rating: 5, review: "Received many compliments while wearing this saree. The fabric quality is excellent." },
-                    { img: "facebook-assets/Model4.jpg", name: "Neha T.", rating: 4, review: "A perfect blend of tradition and contemporary style. The packaging was also very elegant." },
-                  ].map((review, i) => (
-                    <Card key={i}>
-                      <CardContent className="p-4">
-                        <div className="aspect-square w-full overflow-hidden rounded-lg">
-                          <Image
-                            src={review.img}
-                            alt={`Review by ${review.name}`}
-                            width={300}
-                            height={300}
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                        <div className="mt-4">
-                          <div className="flex items-center">
-                            <div className="flex items-center">
-                              {Array.from({ length: 5 }).map((_, j) => (
-                                <Star
-                                  key={j}
-                                  className={`h-4 w-4 ${j < review.rating ? "fill-primary text-primary" : "fill-muted text-muted-foreground"}`}
-                                />
-                              ))}
-                            </div>
-                            <span className="ml-2 text-sm text-muted-foreground">{review.rating}.0</span>
-                          </div>
-                          <h3 className="mt-2 font-medium">{review.name}</h3>
-                          <p className="mt-1 text-sm text-muted-foreground">
-                            "{review.review}"
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
+                  {WRITTEN_REVIEWS.map((review, i) => (
+                    <ReviewCard key={i} review={review} />
                   ))}
                 </div>
               </TabsContent>
               <TabsContent value="videos" className="mt-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {Array.from({ length: 3 }).map((_, i) => (
-                    <Card key={i}>
-                      <CardContent className="p-4">
-                        <div className="aspect-video w-full overflow-hidden rounded-lg bg-muted flex items-center justify-center">
-                          <div className="text-center text-muted-foreground">
-                            <p>Video Review {i + 1}</p>
-                            <p className="text-sm">(Facebook Reel Placeholder)</p>
-                          </div>
-                        </div>
-                        <div className="mt-4">
-                          <div className="flex items-center">
-                            <div className="flex items-center">
-                              {Array.from({ length: 5 }).map((_, j) => (
-                                <Star
-                                  key={j}
-                                  className={`h-4 w-4 ${j < 5 ? "fill-primary text-primary" : "fill-muted text-muted-foreground"}`}
-                                />
-                              ))}
-                            </div>
-                            <span className="ml-2 text-sm text-muted-foreground">5.0</span>
-                          </div>
-                          <h3 className="mt-2 font-medium">Video Reviewer</h3>
-                          <p className="mt-1 text-sm text-muted-foreground">
-                            "I absolutely love my Muslin saree from Dui Konna! The quality is exceptional and the design
-                            is unique."
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
+                  {VIDEO_REVIEWS.map((review, i) => (
+                    <ReviewCard key={i} review={review} />
                   ))}
                 </div>
               </TabsContent>
@@ -271,11 +288,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="track" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <section
+          id="track"
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted/40"
+        >
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Track Your Order</h2>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                  Track Your Order
+                </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Enter your order number to track your shipment.
                 </p>
@@ -292,7 +314,11 @@ export default function Home() {
                       >
                         Order Number
                       </label>
-                      <Input id="order-number" placeholder="Enter your order number" className="w-full" />
+                      <Input
+                        id="order-number"
+                        placeholder="Enter your order number"
+                        className="w-full"
+                      />
                     </div>
                     <div className="grid gap-2">
                       <label
@@ -301,7 +327,11 @@ export default function Home() {
                       >
                         Phone Number
                       </label>
-                      <Input id="phone" placeholder="Enter your phone number" className="w-full" />
+                      <Input
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        className="w-full"
+                      />
                     </div>
                     <Button type="submit" className="w-full">
                       <Truck className="mr-2 h-4 w-4" />
@@ -320,16 +350,21 @@ export default function Home() {
             © 2025 Dui Konna. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               Privacy Policy
             </Link>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
