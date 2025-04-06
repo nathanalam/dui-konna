@@ -29,8 +29,6 @@ const nextConfig = {
   },
   output: 'export',
   trailingSlash: true,
-  basePath: '/dui-konna',
-  assetPrefix: '/dui-konna/',
 }
 
 if (userConfig) {
