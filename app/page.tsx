@@ -13,7 +13,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/Logo.png" alt="Dui Konna Logo" width={40} height={40} className="rounded-full" />
+            <Image src="Logo.png" alt="Dui Konna Logo" width={40} height={40} className="rounded-full" />
             <span className="text-xl font-bold">Dui Konna</span>
           </Link>
           <nav className="hidden md:flex gap-6">
@@ -83,7 +83,7 @@ export default function Home() {
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <div className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last">
                 <Image
-                  src="/facebook-assets/Banner.jpg"
+                  src="facebook-assets/Banner.jpg"
                   alt="About Dui Konna"
                   width={600}
                   height={600}
@@ -104,7 +104,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <Link href="https:/facebook.com" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" size="icon">
                       <Facebook className="h-4 w-4" />
                       <span className="sr-only">Facebook</span>
@@ -134,14 +134,14 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {[
-                { img: "/facebook-assets/Saree1.jpg", name: "Classic Muslin Saree", price: 2500 },
-                { img: "/facebook-assets/Saree2.jpg", name: "Royal Muslin Saree", price: 3000 },
-                { img: "/facebook-assets/Model1.jpg", name: "Designer Muslin Saree", price: 3500 },
-                { img: "/facebook-assets/Model2.jpg", name: "Traditional Muslin Saree", price: 2800 },
-                { img: "/facebook-assets/Model3.jpg", name: "Modern Muslin Saree", price: 3200 },
-                { img: "/facebook-assets/Model4.jpg", name: "Boutique Muslin Saree", price: 4000 },
-                { img: "/facebook-assets/Model5.jpg", name: "Luxury Muslin Saree", price: 4500 },
-                { img: "/facebook-assets/Model6.jpg", name: "Premium Muslin Saree", price: 3800 },
+                { img: "facebook-assets/Saree1.jpg", name: "Classic Muslin Saree", price: 2500 },
+                { img: "facebook-assets/Saree2.jpg", name: "Royal Muslin Saree", price: 3000 },
+                { img: "facebook-assets/Model1.jpg", name: "Designer Muslin Saree", price: 3500 },
+                { img: "facebook-assets/Model2.jpg", name: "Traditional Muslin Saree", price: 2800 },
+                { img: "facebook-assets/Model3.jpg", name: "Modern Muslin Saree", price: 3200 },
+                { img: "facebook-assets/Model4.jpg", name: "Boutique Muslin Saree", price: 4000 },
+                { img: "facebook-assets/Model5.jpg", name: "Luxury Muslin Saree", price: 4500 },
+                { img: "facebook-assets/Model6.jpg", name: "Premium Muslin Saree", price: 3800 },
               ].map((item, i) => (
                 <Link href="#" key={i} className="group relative overflow-hidden rounded-lg">
                   <div className="aspect-[3/4] w-full overflow-hidden rounded-lg">
@@ -193,12 +193,12 @@ export default function Home() {
               <TabsContent value="photos" className="mt-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {[
-                    { img: "/facebook-assets/Model7.jpg", name: "Sarah K.", rating: 5, review: "The craftsmanship is exceptional! The saree drapes beautifully and the colors are exactly as shown." },
-                    { img: "/facebook-assets/Model8.jpg", name: "Priya M.", rating: 5, review: "Absolutely love my Muslin saree! The quality is outstanding and it's so comfortable to wear." },
-                    { img: "/facebook-assets/Model1.jpg", name: "Anjali R.", rating: 4, review: "Beautiful design and perfect fit. The attention to detail is remarkable." },
-                    { img: "/facebook-assets/Model2.jpg", name: "Meera S.", rating: 5, review: "The traditional patterns with modern touch make this saree unique. Highly recommended!" },
-                    { img: "/facebook-assets/Model3.jpg", name: "Riya P.", rating: 5, review: "Received many compliments while wearing this saree. The fabric quality is excellent." },
-                    { img: "/facebook-assets/Model4.jpg", name: "Neha T.", rating: 4, review: "A perfect blend of tradition and contemporary style. The packaging was also very elegant." },
+                    { img: "facebook-assets/Model7.jpg", name: "Sarah K.", rating: 5, review: "The craftsmanship is exceptional! The saree drapes beautifully and the colors are exactly as shown." },
+                    { img: "facebook-assets/Model8.jpg", name: "Priya M.", rating: 5, review: "Absolutely love my Muslin saree! The quality is outstanding and it's so comfortable to wear." },
+                    { img: "facebook-assets/Model1.jpg", name: "Anjali R.", rating: 4, review: "Beautiful design and perfect fit. The attention to detail is remarkable." },
+                    { img: "facebook-assets/Model2.jpg", name: "Meera S.", rating: 5, review: "The traditional patterns with modern touch make this saree unique. Highly recommended!" },
+                    { img: "facebook-assets/Model3.jpg", name: "Riya P.", rating: 5, review: "Received many compliments while wearing this saree. The fabric quality is excellent." },
+                    { img: "facebook-assets/Model4.jpg", name: "Neha T.", rating: 4, review: "A perfect blend of tradition and contemporary style. The packaging was also very elegant." },
                   ].map((review, i) => (
                     <Card key={i}>
                       <CardContent className="p-4">
