@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Dui Konna - Exquisite Muslin Sarees',
   description: 'Discover unique handcrafted Muslin sarees from Dui Konna. Traditional craftsmanship meets modern design.',
   icons: {
-    icon: '/favicon.ico',
+    icon: 'favicon.ico',
   },
 }
 
