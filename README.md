@@ -15,7 +15,7 @@ A beautiful website showcasing handcrafted Muslin sarees, built with Next.js and
 ### Prerequisites
 
 - Node.js 18.0.0 or later
-- npm or yarn
+- yarn
 
 ### Installation
 
@@ -27,15 +27,11 @@ cd dui-konna
 
 2. Install dependencies
 ```bash
-npm install
-# or
 yarn install
 ```
 
 3. Run the development server
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -48,8 +44,6 @@ yarn dev
 To generate a static website that can be deployed to any static hosting service:
 
 ```bash
-npm run build
-# or
 yarn build
 ```
 
