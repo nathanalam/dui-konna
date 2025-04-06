@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, ShoppingBag, Star, Truck } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,8 +10,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ReviewCard } from "@/components/review-card";
 import { VIDEO_REVIEWS, WRITTEN_REVIEWS } from "@/lib/const";
+import { ContactModal } from "@/components/contact-modal";
 
 export default function Home() {
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -57,24 +62,41 @@ export default function Home() {
                 <span className="sr-only">Shopping Cart</span>
               </Button>
             </Link>
-            <Button className="rounded-full" size="sm">
+            <Button
+              className="rounded-full"
+              size="sm"
+              onClick={() => setContactModalOpen(true)}
+            >
               Contact Us
             </Button>
           </div>
         </div>
       </header>
+      <ContactModal
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
+      />
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Discover Unique Muslin Sarees
+                  Unique Muslin Sarees
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
                   Experience the timeless elegance of handcrafted Muslin sarees,
                   where tradition meets contemporary design.
                 </p>
+              </div>
+              <div className="flex justify-center my-8">
+                <Image
+                  src="favicon.png"
+                  alt="Dui Konna"
+                  width={600}
+                  height={600}
+                  className="aspect-square object-cover rounded-lg shadow-lg"
+                />
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
                 <Link href="#products">
