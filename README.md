@@ -67,40 +67,11 @@ The static website can be deployed to any static hosting service such as:
 
 #### Example: Deploying to GitHub Pages
 
-1. Add a GitHub Actions workflow file to your repository:
+1. The repository includes a GitHub Actions workflow file that automatically deploys your site to GitHub Pages when you push to the main branch.
 
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: out
-```
-
-2. Push your changes to GitHub, and the workflow will automatically deploy your site to GitHub Pages.
+2. Make sure your repository settings are configured to use GitHub Pages:
+   - Go to Settings > Pages
+   - Set the source to "GitHub Actions"
 
 ## License
 
