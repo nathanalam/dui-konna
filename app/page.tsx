@@ -53,7 +53,7 @@ export default function Home() {
               href="#track"
               className="text-sm font-medium hover:underline underline-offset-4"
             >
-              Track Order
+              Order
             </Link>
           </nav>
           <div className="flex items-center gap-4">
