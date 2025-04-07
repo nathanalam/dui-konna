@@ -67,6 +67,30 @@ The static website can be deployed to any static hosting service such as:
    - Go to Settings > Pages
    - Set the source to "GitHub Actions"
 
+## Google Spreadsheet Integration
+
+This website fetches product data directly from a public Google Spreadsheet without requiring any API keys or backend services.
+
+### How It Works
+
+1. The products are stored in a publicly accessible Google Spreadsheet
+2. The website fetches the CSV export of the spreadsheet directly from the client-side
+3. The data is parsed and displayed in the products section of the website
+
+### Updating Products
+
+To update the displayed products:
+
+1. Edit the Google Spreadsheet at: [Dui Konna Products](https://docs.google.com/spreadsheets/d/1MQ4AnjWUty_uyNj-Z2vlW3y3IwsLrb1xAuYIThgXC5M/edit?gid=0#gid=0)
+2. Ensure the spreadsheet has the following columns:
+   - ID: A unique identifier for the product
+   - Image URL: The URL of the product image
+   - Name: The name of the product
+   - Description: A short description of the product
+   - Price: The price in Bangladeshi Taka (৳)
+
+The changes to the spreadsheet will be reflected on the website immediately when users reload the page.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

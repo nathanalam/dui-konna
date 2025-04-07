@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { useEffect, useRef } from "react";
+import { Review } from "@/lib/types";
 
 export const ReviewCard = ({ review }: { review: Review }) => {
   const fbVideoRef = useRef<HTMLDivElement>(null);

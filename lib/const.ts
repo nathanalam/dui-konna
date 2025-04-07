@@ -1,3 +1,5 @@
+import { Review } from "./types";
+
 export const WRITTEN_REVIEWS: Review[] = [
   {
     img: "facebook-assets/Model7.jpg",
@@ -19,27 +21,6 @@ export const WRITTEN_REVIEWS: Review[] = [
     rating: 4,
     review:
       "Beautiful design and perfect fit. The attention to detail is remarkable.",
-  },
-  {
-    img: "facebook-assets/Model2.jpg",
-    name: "Meera S.",
-    rating: 5,
-    review:
-      "The traditional patterns with modern touch make this saree unique. Highly recommended!",
-  },
-  {
-    img: "facebook-assets/Model3.jpg",
-    name: "Riya P.",
-    rating: 5,
-    review:
-      "Received many compliments while wearing this saree. The fabric quality is excellent.",
-  },
-  {
-    img: "facebook-assets/Model4.jpg",
-    name: "Neha T.",
-    rating: 4,
-    review:
-      "A perfect blend of tradition and contemporary style. The packaging was also very elegant.",
   },
 ];
 

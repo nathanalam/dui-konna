@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, ShoppingBag, Star, Truck } from "lucide-react";
+import { Facebook, Instagram, ShoppingBag, Truck } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ReviewCard } from "@/components/review-card";
 import { VIDEO_REVIEWS, WRITTEN_REVIEWS } from "@/lib/const";
 import { ContactModal } from "@/components/contact-modal";
+import { ProductList } from "@/components/ProductList";
 
 export default function Home() {
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -194,83 +195,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {[
-                {
-                  img: "facebook-assets/Saree1.jpg",
-                  name: "Classic Muslin Saree",
-                  price: 2500,
-                },
-                {
-                  img: "facebook-assets/Saree2.jpg",
-                  name: "Royal Muslin Saree",
-                  price: 3000,
-                },
-                {
-                  img: "facebook-assets/Model1.jpg",
-                  name: "Designer Muslin Saree",
-                  price: 3500,
-                },
-                {
-                  img: "facebook-assets/Model2.jpg",
-                  name: "Traditional Muslin Saree",
-                  price: 2800,
-                },
-                {
-                  img: "facebook-assets/Model3.jpg",
-                  name: "Modern Muslin Saree",
-                  price: 3200,
-                },
-                {
-                  img: "facebook-assets/Model4.jpg",
-                  name: "Boutique Muslin Saree",
-                  price: 4000,
-                },
-                {
-                  img: "facebook-assets/Model5.jpg",
-                  name: "Luxury Muslin Saree",
-                  price: 4500,
-                },
-                {
-                  img: "facebook-assets/Model6.jpg",
-                  name: "Premium Muslin Saree",
-                  price: 3800,
-                },
-              ].map((item, i) => (
-                <Link
-                  href="#"
-                  key={i}
-                  className="group relative overflow-hidden rounded-lg"
-                >
-                  <div className="aspect-[3/4] w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={item.img}
-                      alt={item.name}
-                      width={300}
-                      height={400}
-                      className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold">{item.name}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Handcrafted with Love
-                    </p>
-                    <div className="mt-2 flex items-center justify-between">
-                      <span className="font-medium">৳ {item.price}</span>
-                      <Button variant="outline" size="sm">
-                        Add to Cart
-                      </Button>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <div className="flex justify-center">
-              <Link href="#">
-                <Button size="lg">View All Products</Button>
-              </Link>
-            </div>
+            <ProductList />
           </div>
         </section>
 
@@ -315,53 +240,15 @@ export default function Home() {
           className="w-full py-12 md:py-24 lg:py-32 bg-muted/40"
         >
           <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-                  Track Your Order
-                </h2>
-                <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Enter your order number to track your shipment.
-                </p>
-              </div>
-            </div>
             <div className="mx-auto max-w-lg py-12">
-              <Card>
-                <CardContent className="p-6">
-                  <form className="grid gap-4">
-                    <div className="grid gap-2">
-                      <label
-                        htmlFor="order-number"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Order Number
-                      </label>
-                      <Input
-                        id="order-number"
-                        placeholder="Enter your order number"
-                        className="w-full"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <label
-                        htmlFor="phone"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Phone Number
-                      </label>
-                      <Input
-                        id="phone"
-                        placeholder="Enter your phone number"
-                        className="w-full"
-                      />
-                    </div>
-                    <Button type="submit" className="w-full">
-                      <Truck className="mr-2 h-4 w-4" />
-                      Track Order
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfg8hL7nsavgzwSiJ-9EiQtz1ThnNSYme04r2Bu_axwwggUkQ/viewform?embedded=true"
+                height="1735"
+                className="w-full border-0"
+                style={{ width: "100%", maxWidth: "100%" }}
+              >
+                Loading…
+              </iframe>
             </div>
           </div>
         </section>
